@@ -10,8 +10,7 @@ import org.testng.annotations.DataProvider;
         glue = {"stepdefs"},
 plugin = {"pretty", "html:target/cucumber-reports/reports.html","json:target/cucumber-reports/cucumberReport.json"},
 monochrome = true,
-publish = true,
-tags = "@logout")
+publish = true)
 public class TestRunner extends AbstractTestNGCucumberTests {
     @DataProvider(parallel = true)
     @Override
