@@ -1,5 +1,8 @@
 package org.aut.Pages;
 
+import org.aut.Utils.EvtLogger;
+import org.openqa.selenium.ElementNotInteractableException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -10,18 +13,29 @@ public class InventoryPage {
 
     @FindBy(xpath = "//div[@id='inventory_filter_container']/div")
     WebElement invetory_header;
+
+    @FindBy(xpath = "//div[@class='bm-burger-button']")
+    WebElement burger_menu;
+
     public InventoryPage(WebDriver driver) {
         this.driver = driver;
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
-    public String checkInventory(){
-       if (invetory_header.isDisplayed()){
-           return invetory_header.getText();
-       }else {
-           return "Null";
-       }
+    public String checkInventory() {
+        if (invetory_header.isDisplayed()) {
+            return invetory_header.getText();
+        } else {
+            return "Null";
+        }
 
     }
 
+    public void clickmenu(){
+        if(burger_menu.isDisplayed()){
+            burger_menu.click();
+        }else {
+            throw  new StaleElementReferenceException("Element not displayed");
+        }
+    }
 }

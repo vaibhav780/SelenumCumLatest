@@ -8,9 +8,10 @@ import org.testng.annotations.DataProvider;
 
 @CucumberOptions(features = {"src/test/resources/Features/Login.feature"},
         glue = {"stepdefs"},
-        plugin = {"pretty", "html:target/cucumber-reports/reports.html"},
+        plugin = {"pretty", "html:target/cucumber-reports/reports.html","json:target/cucumber-reports/cucumberReport.json"},
         monochrome = true,
-        publish = true)
+        publish = true,
+        tags = "login,logout")
 public class TestRunner extends AbstractTestNGCucumberTests {
     @DataProvider(parallel = true)
     @Override
