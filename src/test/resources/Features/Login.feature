@@ -1,4 +1,5 @@
 Feature: Login
+
   @login @all
   Scenario Outline: Validate Login with Valid users
     Given user on Login page
@@ -23,17 +24,22 @@ Feature: Login
 
   @Logout @all
   Scenario Outline: Verification of Login and Logout
-      Given user on Login page
-      When user enter "<username>" and "<password>"
-      And user clicks on login
-      Then user navigate to inventory page header "<title>"
-      When user click on nav menu
-      Examples:
-        | username      | password     | title    |
-        | standard_user | secret_sauce | Products |
+    Given user on Login page
+    When user enter "<username>" and "<password>"
+    And user clicks on login
+    Then user navigate to inventory page header "<title>"
+    When user click on nav menu
+    Examples:
+      | username      | password     | title    |
+      | standard_user | secret_sauce | Products |
+
+
   @all @product_list
   Scenario: Verification of product list
     Given user on Login page
     When user enter "standard_user" and "secret_sauce"
     And user clicks on login
     Then user navigate to inventory page header "Products"
+    Then user prints product info
+    When user sort by "desc"
+#    Then user prints product info
