@@ -11,7 +11,7 @@ Feature: Login
       | problem_user            | secret_sauce | Products |
       | performance_glitch_user | secret_sauce | Products |
 
-    @login
+  @login
   Scenario Outline: Validate Login with invalid user
     Given user on Login page
     When user enter "<username>" and "<password>"
@@ -21,7 +21,7 @@ Feature: Login
       | username | password | message                                                     |
       | admin    | admin    | Username and password do not match any user in this service |
 
-      @logout
+  @Logout
     Scenario Outline: Verification of Login and Logout
       Given user on Login page
       When user enter "<username>" and "<password>"
