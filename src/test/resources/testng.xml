@@ -3,7 +3,7 @@
 <suite name="Practice Suite" verbose="1" parallel="classes" thread-count="5">
     <test name="Login Test Basics 1">
         <classes>
-            <class name="org.aut.Runner.TestRunner"/>
+            <class name="org.aut.Runner.OneRunner"/>
         </classes>
     </test>
 </suite> <!-- Suite -->
