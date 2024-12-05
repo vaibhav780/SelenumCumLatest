@@ -34,6 +34,6 @@ Feature: Login
   @all @product_list
   Scenario: Verification of product list
     Given user on Login page
-    When user enter "standard_user " and "secret_sauce"
+    When user enter "standard_user" and "secret_sauce"
     And user clicks on login
     Then user navigate to inventory page header "Products"
