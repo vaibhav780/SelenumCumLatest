@@ -17,7 +17,7 @@ public class Base {
     
     public WebDriver initdriver(){
         try{
-             URL serverUrl = new URL("http://localhost:4444/");
+             URL serverUrl = new URL("http://172.18.0.4:4444/");
           DesiredCapabilities capabilities = new DesiredCapabilities();
           capabilities.setBrowserName("chrome");
               driver=new RemoteWebDriver(serverUrl,capabilities);
