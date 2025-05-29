@@ -13,14 +13,23 @@ public class Base {
     
     
     public WebDriver initdriver(){
-        driver = new ChromeDriver();
+        try{
+             URL serverUrl = new URL("http://localhost:4444/");
+          DesiredCapabilities capabilities = new DesiredCapabilities();
+          capabilities.setBrowserName("chrome");
+              driver=new RemoteWebDriver(serverUrl,capabilities);
+        //driver = new ChromeDriver();
         threadLocal.set(driver);
         
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(10));
         driver.manage().deleteAllCookies();
         return driver;
-    }
+    }catch (MalformedURLException e) {
+          throw new RuntimeException(e);
+      }
+
+    }   
     
     
     public static WebDriver getDriver(){
