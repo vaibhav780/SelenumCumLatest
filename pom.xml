@@ -82,7 +82,7 @@
                 <suiteXmlFiles>
 <!--                    <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>-->
                     <!--suppress UnresolvedMavenProperty -->
-                    <suiteXmlFile>src/test/java/org/aut/Runner/TestRunner.java</suiteXmlFile>
+                    <suiteXmlFile>${smoke}</suiteXmlFile>
                 </suiteXmlFiles>
             </configuration>
         </plugin>
