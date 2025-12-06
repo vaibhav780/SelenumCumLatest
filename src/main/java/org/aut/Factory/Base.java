@@ -24,6 +24,7 @@ public class Base {
 //          capabilities.setBrowserName("chrome");
 //              driver=new RemoteWebDriver(serverUrl,capabilities);
 
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chrome-linux64/chrome");
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("credentials_enable_service", false);
