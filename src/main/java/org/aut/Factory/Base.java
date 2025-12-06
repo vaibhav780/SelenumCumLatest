@@ -8,6 +8,9 @@ import java.net.URL;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import java.time.Duration;
+import org.openqa.selenium.chrome.ChromeOptions;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Base {
     
