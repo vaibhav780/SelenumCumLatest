@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = {"src/test/resources/Features/Login.feature"},
         glue = {"stepdefs"},
-        plugin = {"pretty", "html:target/cucumber-reports/reports.html", "json:target/cucumber-reports/cucumberReport.json"},
+        plugin = {"pretty", "html:cucumber-reports/reports.html", "json:cucumber-reports/cucumberReport.json"},
         monochrome = true,
         publish = true)
 public class OneRunner extends AbstractTestNGCucumberTests {
