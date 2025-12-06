@@ -16,22 +16,24 @@ public class Base {
     
     
     public WebDriver initdriver(){
-        try{
-             URL serverUrl = new URL("http://172.18.0.4:4444/");
-          DesiredCapabilities capabilities = new DesiredCapabilities();
-          capabilities.setBrowserName("chrome");
-              driver=new RemoteWebDriver(serverUrl,capabilities);
-        //driver = new ChromeDriver();
-        threadLocal.set(driver);
-        
+        //             URL serverUrl = new URL("http://172.18.0.4:4444/");
+//          DesiredCapabilities capabilities = new DesiredCapabilities();
+//          capabilities.setBrowserName("chrome");
+//              driver=new RemoteWebDriver(serverUrl,capabilities);
+
+        ChromeOptions options = new ChromeOptions();
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("credentials_enable_service", false);
+        prefs.put("profile.password_manager_enabled", false);
+        prefs.put("profile.password_manager_leak_detection", false);
+        options.setExperimentalOption("prefs", prefs);
+       driver = new ChromeDriver(options);
+  
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait( Duration.ofSeconds(10));
         driver.manage().deleteAllCookies();
         return driver;
-    }catch (MalformedURLException e) {
-          throw new RuntimeException(e);
-      }
-
+   
     }   
     
     
